@@ -25,18 +25,42 @@
             android:layout_height="wrap_content"
             android:text="Exercise 3"
             android:layout_gravity="center"
-            android:id="@+id/btnEx3"/>
+            android:id="@+id/btnLinear1"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exercise 4"
             android:layout_gravity="center"
-            android:id="@+id/btnEx4"/>
+            android:id="@+id/btnLinear2"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Exercise 5"
             android:layout_gravity="center"
-            android:id="@+id/btnEx5"/>
+            android:id="@+id/btnRelative1"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise 6"
+            android:layout_gravity="center"
+            android:id="@+id/btnRelative2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise 7"
+            android:layout_gravity="center"
+            android:id="@+id/btnAbsolute"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise 8"
+            android:layout_gravity="center"
+            android:id="@+id/btnTable"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exercise 9"
+            android:layout_gravity="center"
+            android:id="@+id/btnConstraint"/>
     </LinearLayout>
 </FrameLayout>

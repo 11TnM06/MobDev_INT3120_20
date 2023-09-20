@@ -23,6 +23,13 @@
         </activity>
         <activity android:name=".Ex1Activity"/>
         <activity android:name=".Ex2Activity"/>
+        <activity android:name=".Linear1Activity"/>
+        <activity android:name=".Linear2Activity"/>
+        <activity android:name=".Relative1Activity"/>
+        <activity android:name=".Relative2Activity"/>
+        <activity android:name=".AbsoluteActivity"/>
+        <activity android:name=".ConstraintActivity"/>
+        <activity android:name=".TableActivity"/>
     </application>
 
 </manifest>

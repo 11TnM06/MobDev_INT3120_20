@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow>
+        <TextView
+            android:text="TableLayout Example"
+            android:gravity="center"/>
+    </TableRow>
+    <TableRow>
+        <Button android:text="BUTTON1 BUTTON1" />
+        <Button android:text="BUTTON2"/>
+    </TableRow>
+    <TableRow>
+        <Button
+            android:layout_width="wrap_content"
+            android:text="BUTTON1" />
+        <Button android:text="BUTTON2" />
+        <Button android:text="LONG BUTTON" />
+    </TableRow>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnReturnMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:textSize="20sp"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</TableLayout>
+
+

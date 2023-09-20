@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android=
+    "http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+        android:id="@+id/EL01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element One" />
+    <TextView
+        android:id="@+id/EL02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element Two"
+        android:layout_below="@id/EL01" />
+    <TextView
+        android:id="@+id/EL03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element Three"
+        android:layout_toRightOf="@id/EL02" />
+    <TextView
+        android:id="@+id/EL04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element Four"
+        android:layout_toRightOf="@id/EL02"
+        android:layout_below="@id/EL01" />
+    <TextView
+        android:id="@+id/EL05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Element Five"
+        android:layout_toRightOf="@id/EL02"
+        android:layout_below="@id/EL02" />
+    <Button
+        android:id="@+id/btnReturnMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
