@@ -1,96 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="15dp"
-    android:layout_marginTop="15dp">
+    android:orientation="vertical">
     <TextView
-        android:id="@+id/tvHeader"
-        android:layout_width="wrap_content"
+        android:id="@+id/selection"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Welcome Homer"
+        android:background="#ff0033cc"
+        android:textSize="14pt"
         android:textStyle="bold"
-        android:textSize="30sp"/>
-    <TextView
-        android:id="@+id/tvContent1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please give Generously"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tvHeader"/>
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvContent1">
-        <RadioButton
-            android:id="@+id/radioButtonOption1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Paypal" />
-        <RadioButton
-            android:id="@+id/radioButtonOption2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Direct" />
-    </RadioGroup>
+        >
+    </TextView>
 
-    <!-- Set numberPicker min max from 1 to 100 -->
-    <NumberPicker
-        android:id="@+id/numberPicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvContent1"
-        android:layout_alignParentEnd="true"
-        android:value="1" />
-    <ProgressBar
-        android:id="@+id/progressBarHorizontal"
-        style="?android:attr/progressBarStyleHorizontal"
+    <Spinner
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100"
-        android:minHeight="50dp"
-        android:minWidth="0dp"
-        android:progress="1"
-        android:progressBackgroundTint="@android:color/darker_gray"
-        android:progressTint="@color/black"
-        android:layout_below="@+id/numberPicker"/>
-    <TextView
-        android:id="@+id/tvContent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Amount"
-        android:textSize="20sp"
-        android:layout_below="@+id/progressBarHorizontal"/>
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:hint="Money"
-        android:inputType="text"
-        android:layout_below="@+id/progressBarHorizontal"/>
-    <Button
-        android:id="@+id/btnDonate"
-        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Donate"
-        android:textSize="15sp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/editText"/>
-    <TextView
-        android:id="@+id/tvContent3"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Total so far $0"
-        android:textSize="20sp"
-        android:layout_marginTop="50dp"
-        android:layout_alignParentEnd="true"
-
-        android:layout_below="@id/editText" />
-
+        android:layout_below="@id/selection"/>
     <Button
         android:id="@+id/btnReturnMain"
         android:layout_width="wrap_content"
