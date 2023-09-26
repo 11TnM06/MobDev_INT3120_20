@@ -23,14 +23,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <RadioButton
+            android:id="@+id/radioButton1OfGroup1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cheese"/>
         <RadioButton
+            android:id="@+id/radioButton2OfGroup1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2x Cheese"/>
         <RadioButton
+            android:id="@+id/radioButton3OfGroup1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="None"/>
@@ -41,10 +44,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <RadioButton
+            android:id="@+id/radioButton1OfGroup2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Round"/>
         <RadioButton
+            android:id="@+id/radioButton2OfGroup2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Square"/>

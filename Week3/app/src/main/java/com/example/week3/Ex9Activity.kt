@@ -1,8 +1,13 @@
 package com.example.week3
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class Ex9Activity: AppCompatActivity(), View.OnClickListener {
@@ -16,6 +21,7 @@ class Ex9Activity: AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.btnReturnMain -> {
+                Log.d("manh", "on click return ")
                 onBackPressed()
             }
             else -> {
@@ -23,4 +29,6 @@ class Ex9Activity: AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
 }
+
