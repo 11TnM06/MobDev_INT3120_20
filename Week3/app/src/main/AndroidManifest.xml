@@ -33,6 +33,9 @@
         <activity android:name=".Ex10Activity"/>
         <activity android:name=".Ex11Activity"/>
         <activity android:name=".Ex12Activity"/>
+        <activity android:name=".Ex13Activity"/>
+        <activity android:name=".Ex14Activity"/>
+        <activity android:name=".Ex15Activity"/>
     </application>
 
 </manifest>
