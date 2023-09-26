@@ -8,15 +8,16 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.log
 
-class Ex2Activity : AppCompatActivity() {
+class Ex2Activity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var btnReturnMain: Button
     private lateinit var tvContent: TextView
     private val mobileArray = arrayOf(
-        "Select an option", "Android", "IPhone", "WindowsMobile",
+        "Android", "IPhone", "WindowsMobile",
         "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X"
     )
-
+    private lateinit var spinner: Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ex2)
@@ -25,29 +26,18 @@ class Ex2Activity : AppCompatActivity() {
         btnReturnMain.setOnClickListener {
             onBackPressed()
         }
-        val spinner = findViewById<Spinner>(R.id.spinner)
+        spinner = findViewById<Spinner>(R.id.spinner)
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, mobileArray)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
+        spinner.onItemSelectedListener = this
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                tvContent.text = "xin chao"
-
-            }
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                // Handle item selection
-                val selectedItem = parent.getItemAtPosition(position).toString()
-                if (selectedItem == "Select an option") {
-                    tvContent.text = ""
-                }
-                else {
-                    tvContent.text = selectedItem
-                }
-            }
-
-
-        }
-
+    }
+    override fun onNothingSelected(parent: AdapterView<*>) {
+        tvContent.text = ""
+    }
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+        val selectedItem = parent.getItemAtPosition(position).toString()
+        tvContent.text = selectedItem
     }
 }

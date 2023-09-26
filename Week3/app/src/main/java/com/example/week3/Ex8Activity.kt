@@ -11,7 +11,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class Ex5Activity : AppCompatActivity(), View.OnClickListener {
+class Ex8Activity: AppCompatActivity(), View.OnClickListener {
     private lateinit var btnReturnMain: Button
     private lateinit var btnDonate: Button
     private lateinit var numberPickerNumber: NumberPicker
@@ -21,7 +21,7 @@ class Ex5Activity : AppCompatActivity(), View.OnClickListener {
     private var dwTotal = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex5)
+        setContentView(R.layout.activity_ex8)
         // Return main button
         btnReturnMain = findViewById(R.id.btnReturnMain)
         btnReturnMain.setOnClickListener(this)

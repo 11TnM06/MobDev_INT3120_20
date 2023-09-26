@@ -16,4 +16,29 @@
         android:id="@+id/menu_item5"
         android:title="Exercise 5" />
 
+    <item
+        android:id="@+id/menu_item6"
+        android:title="Exercise 6" />
+    <item
+        android:id="@+id/menu_item7"
+        android:title="Exercise 7" />
+    <item
+        android:id="@+id/menu_item8"
+        android:title="Exercise 8" />
+    <item
+        android:id="@+id/menu_item9"
+        android:title="Exercise 9" />
+    <item
+        android:id="@+id/menu_item10"
+        android:title="Exercise 10" />
+
+
+    <item
+        android:id="@+id/menu_item11"
+        android:title="Exercise 11" />
+    <item
+        android:id="@+id/menu_item12"
+        android:title="Exercise 12" />
+
+
 </menu>

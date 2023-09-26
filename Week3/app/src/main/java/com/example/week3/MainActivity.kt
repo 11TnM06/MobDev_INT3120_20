@@ -64,6 +64,46 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 return true
             }
+            R.id.menu_item6 -> {
+                val intent = Intent(this, Ex6Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.menu_item7 -> {
+                // Handle the click on "Exercise 3" menu item
+                val intent = Intent(this, Ex7Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.menu_item8 -> {
+                val intent = Intent(this, Ex8Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.menu_item9 -> {
+                // Handle the click on "Exercise 3" menu item
+                val intent = Intent(this, Ex9Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.menu_item10 -> {
+                val intent = Intent(this, Ex10Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.menu_item11 -> {
+                // Handle the click on "Exercise 3" menu item
+                val intent = Intent(this, Ex11Activity::class.java)
+                startActivity(intent)
+                return true
+            }
+            R.id.menu_item12 -> {
+                val intent = Intent(this, Ex12Activity::class.java)
+                startActivity(intent)
+                return true
+            }
 
             else -> return super.onOptionsItemSelected(item)
         }

@@ -15,9 +15,11 @@
 
     <Spinner
         android:id="@+id/spinner"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/selection"/>
+        android:layout_height="70dp"
+        android:layout_below="@id/selection"
+        android:focusableInTouchMode="true"/>
     <Button
         android:id="@+id/btnReturnMain"
         android:layout_width="wrap_content"

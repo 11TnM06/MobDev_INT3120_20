@@ -11,7 +11,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class Ex5Activity : AppCompatActivity(), View.OnClickListener {
+class Ex7Activity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnReturnMain: Button
     private lateinit var btnDonate: Button
     private lateinit var numberPickerNumber: NumberPicker
@@ -21,7 +21,7 @@ class Ex5Activity : AppCompatActivity(), View.OnClickListener {
     private var dwTotal = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ex5)
+        setContentView(R.layout.activity_ex7)
         // Return main button
         btnReturnMain = findViewById(R.id.btnReturnMain)
         btnReturnMain.setOnClickListener(this)
@@ -39,20 +39,24 @@ class Ex5Activity : AppCompatActivity(), View.OnClickListener {
         progressBar = findViewById(R.id.progressBarHorizontal)
 
     }
+
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.btnReturnMain -> {
                 onBackPressed()
             }
+
             R.id.btnDonate -> {
                 calculateTotal()
                 processBar()
             }
+
             else -> {
                 print("button error")
             }
         }
     }
+
     private fun calculateTotal() {
         // get content of edit text
         val sAmount = editText.text.toString()
@@ -65,11 +69,13 @@ class Ex5Activity : AppCompatActivity(), View.OnClickListener {
         }
         dwTotal += dwAmount + numberPickerNumber.value
     }
+
     fun displayTotal() {
         editText.text.clear()
         val total = dwTotal.toString()
         tvContentText3.text = "Total so far $$total"
     }
+
     fun processBar() {
         btnDonate.isEnabled = false
         progressBar.visibility = View.VISIBLE
