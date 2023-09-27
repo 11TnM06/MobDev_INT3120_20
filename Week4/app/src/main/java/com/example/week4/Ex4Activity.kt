@@ -21,12 +21,7 @@ class Ex4Activity : AppCompatActivity() {
         editText = findViewById(R.id.editText)
         textView = findViewById(R.id.textView3)
 
-        btnSendMessage.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                sendMessage();
-            }
-
-        })
+        btnSendMessage.setOnClickListener { sendMessage(); }
     }
     private fun sendMessage() {
         var fullName = editText.text.toString()
@@ -36,6 +31,15 @@ class Ex4Activity : AppCompatActivity() {
         intent.putExtra("fullName", fullName)
         intent.putExtra("message", message)
 
-        startActivity(intent)
+        startActivityForResult(intent, myRequestCode)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == myRequestCode) {
+            if (resultCode == RESULT_OK) {
+                val feedback = data?.getStringExtra("feedback")
+                textView.text = feedback
+            }
+        }
     }
 }

@@ -19,11 +19,7 @@ class Ex4GreetingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ex4_greeting)
 
         btnBack = findViewById(R.id.btnBack)
-        btnBack.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                onBackPressed()
-            }
-        })
+        btnBack.setOnClickListener { onBackPressed() }
         textViewMessage = findViewById(R.id.textView_message)
         fullName = intent.getStringExtra("fullName")
         message = intent.getStringExtra("message")
@@ -34,7 +30,6 @@ class Ex4GreetingActivity : AppCompatActivity() {
         val data = Intent()
         val feedback = "OK, Hello $fullName. How are you?"
         data.putExtra("feedback", feedback)
-
         setResult(Activity.RESULT_OK, data)
         super.finish()
     }

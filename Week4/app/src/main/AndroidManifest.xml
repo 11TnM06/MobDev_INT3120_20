@@ -25,7 +25,16 @@
         <activity android:name="Ex2Activity"/>
         <activity android:name="Ex3Activity"/>
         <activity android:name="Ex4Activity"/>
-        <activity android:name="Ex5Activity"/>
+        <activity android:name=".Ex4GreetingActivity"/>
+        <activity android:name="Ex5Activity"
+            android:exported="false">
+            <intent-filter>
+            <action android:name="android.intent.action.SEND"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <data android:mimeType="text/plain"/>
+        </intent-filter>
+        </activity>
+        <activity android:name="Ex6Activity"/>
     </application>
 
 </manifest>
