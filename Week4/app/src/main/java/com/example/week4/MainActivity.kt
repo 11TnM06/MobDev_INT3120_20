@@ -10,7 +10,7 @@ import android.widget.GridView
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     private val items = arrayOf(
-        "Exercise 1", "Exercise 2", "Exercise 3", "Exercise 4", "Exercise 5"
+        "Exercise 1", "Exercise 2", "Exercise 3"
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,11 +33,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
                 startActivity(intent)
             }
             2 -> {
-                val intent = Intent(this, Ex2Activity::class.java)
-                startActivity(intent)
-            }
-            3 -> {
-                val intent = Intent(this, Ex2Activity::class.java)
+                val intent = Intent(this, Ex3Activity::class.java)
                 startActivity(intent)
             }
         }
