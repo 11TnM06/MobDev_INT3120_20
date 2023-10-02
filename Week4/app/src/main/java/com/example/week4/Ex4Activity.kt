@@ -2,7 +2,6 @@ package com.example.week4
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -30,7 +29,7 @@ class Ex4Activity : AppCompatActivity() {
         val intent = Intent(this, Ex4GreetingActivity::class.java)
         intent.putExtra("fullName", fullName)
         intent.putExtra("message", message)
-
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivityForResult(intent, myRequestCode)
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
