@@ -76,9 +76,7 @@ class MyContentProvider : ContentProvider() {
         val dbHelper =
             DatabaseHelper(context)
         db = dbHelper.writableDatabase
-        return if (db != null) {
-            true
-        } else false
+        return db != null
     }
 
     override fun query(

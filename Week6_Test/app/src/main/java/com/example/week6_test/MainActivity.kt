@@ -22,18 +22,13 @@ class MainActivity : AppCompatActivity() {
         // creating a cursor object of the
         // content URI
         val cursor = contentResolver.query(Uri.parse("content://com.demo.user.provider/users"), null, null, null, null)
-
-        // iteration of the cursor
-        // to print whole table
         if (cursor!!.moveToFirst()) {
             val strBuild = StringBuilder()
             while (!cursor.isAfterLast) {
                 val indexId = cursor.getColumnIndex("id")
                 val indexName = cursor.getColumnIndex("name")
-                strBuild.append("""
-	
-	${cursor.getString(indexId)}-${cursor.getString(indexName)}
-	""".trimIndent())
+                strBuild.append("id:\t${cursor.getString(indexId)} - name:\t${cursor.getString(indexName)}".trimIndent())
+                strBuild.append("\n")
                 cursor.moveToNext()
             }
             resultView.text = strBuild

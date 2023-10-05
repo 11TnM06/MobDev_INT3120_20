@@ -25,38 +25,25 @@ class Ex1Activity : AppCompatActivity() {
     }
 
     fun onClickAddDetails(view: View?) {
-
         // class to add values in the database
         val values = ContentValues()
-
         // fetching text from user
         values.put(MyContentProvider.name, (findViewById<View>(R.id.textName) as EditText).text.toString())
-
         // inserting into database through content URI
         contentResolver.insert(MyContentProvider.CONTENT_URI, values)
-
-        // displaying a toast message
         Toast.makeText(baseContext, "New Record Inserted", Toast.LENGTH_LONG).show()
     }
 
     fun onClickShowDetails(view: View?) {
-        // inserting complete table details in this text field
         val resultView = findViewById<View>(R.id.res) as TextView
-
-        // creating a cursor object of the
-        // content URI
         val cursor = contentResolver.query(Uri.parse("content://com.demo.user.provider/users"), null, null, null, null)
-
-        // iteration of the cursor
-        // to print whole table
         if (cursor!!.moveToFirst()) {
             val strBuild = StringBuilder()
             while (!cursor.isAfterLast) {
                 val indexId = cursor.getColumnIndex("id")
                 val indexName = cursor.getColumnIndex("name")
-                strBuild.append("""
-    ${cursor.getString(indexId)}-${cursor.getString(indexName)}
-    """.trimIndent())
+                strBuild.append("id:\t${cursor.getString(indexId)} - name:\t${cursor.getString(indexName)}".trimIndent())
+                strBuild.append("\n")
                 cursor.moveToNext()
             }
             resultView.text = strBuild
