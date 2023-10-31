@@ -11,50 +11,29 @@ import android.net.Uri
 
 class MyContentProvider : ContentProvider() {
     companion object {
-        // defining authority so that other application can access it
         const val PROVIDER_NAME = "com.demo.user.provider"
-
-        // defining content URI
         const val URL = "content://$PROVIDER_NAME/users"
-
-        // parsing the content URI
         val CONTENT_URI = Uri.parse(URL)
         const val id = "id"
         const val name = "name"
         const val uriCode = 1
         var uriMatcher: UriMatcher? = null
         private val values: HashMap<String, String>? = null
-
-        // declaring name of the database
         const val DATABASE_NAME = "UserDB"
-
-        // declaring table name of the database
         const val TABLE_NAME = "Users"
-
-        // declaring version of the database
         const val DATABASE_VERSION = 1
-
-        // sql query to create the table
         const val CREATE_DB_TABLE =
             (" CREATE TABLE " + TABLE_NAME
                     + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
                     + " name TEXT NOT NULL);")
 
         init {
-
-            // to match the content URI
-            // every time user access table under content provider
             uriMatcher = UriMatcher(UriMatcher.NO_MATCH)
-
-            // to access whole table
             uriMatcher!!.addURI(
                 PROVIDER_NAME,
                 "users",
                 uriCode
             )
-
-            // to access a particular row
-            // of the table
             uriMatcher!!.addURI(
                 PROVIDER_NAME,
                 "users/*",
@@ -62,15 +41,12 @@ class MyContentProvider : ContentProvider() {
             )
         }
     }
-
     override fun getType(uri: Uri): String? {
         return when (uriMatcher!!.match(uri)) {
             uriCode -> "vnd.android.cursor.dir/users"
             else -> throw IllegalArgumentException("Unsupported URI: $uri")
         }
     }
-
-    // creating the database
     override fun onCreate(): Boolean {
         val context = context
         val dbHelper =
@@ -100,8 +76,6 @@ class MyContentProvider : ContentProvider() {
         c.setNotificationUri(context!!.contentResolver, uri)
         return c
     }
-
-    // adding data to the database
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         val rowID = db!!.insert(TABLE_NAME, "", values)
         if (rowID > 0) {
@@ -139,20 +113,14 @@ class MyContentProvider : ContentProvider() {
         context!!.contentResolver.notifyChange(uri, null)
         return count
     }
-
-    // creating object of database
-    // to perform query
     private var db: SQLiteDatabase? = null
-
-    // creating a database
-    private class DatabaseHelper  // defining a constructor
+    private class DatabaseHelper
     internal constructor(context: Context?) : SQLiteOpenHelper(
         context,
         DATABASE_NAME,
         null,
         DATABASE_VERSION
     ) {
-        // creating a table in the database
         override fun onCreate(db: SQLiteDatabase) {
             db.execSQL(CREATE_DB_TABLE)
         }
@@ -162,9 +130,6 @@ class MyContentProvider : ContentProvider() {
             oldVersion: Int,
             newVersion: Int
         ) {
-
-            // sql query to drop a table
-            // having similar name
             db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
             onCreate(db)
         }

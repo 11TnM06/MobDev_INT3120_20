@@ -25,11 +25,8 @@ class Ex1Activity : AppCompatActivity() {
     }
 
     fun onClickAddDetails(view: View?) {
-        // class to add values in the database
         val values = ContentValues()
-        // fetching text from user
         values.put(MyContentProvider.name, (findViewById<View>(R.id.textName) as EditText).text.toString())
-        // inserting into database through content URI
         contentResolver.insert(MyContentProvider.CONTENT_URI, values)
         Toast.makeText(baseContext, "New Record Inserted", Toast.LENGTH_LONG).show()
     }
